@@ -6,14 +6,7 @@ namespace Lab1.ChM
     {
         static void Main(string[] args)
         {
-            double[,] MyMatrix = {{5.18,1.12,0.95,1.32,0.83,7.59},
-                                 {1.12,4.28,2.12,0.57,0.91,3.21},
-                                 {0.95,2.12,6.13,1.29,1.57,2.88},
-                                 {1.32, 0.57,1.29,4.57,1.25,6.25},
-                                 {0.83,0.91,1.57,1.25,5.21,6.35}};
-            /*double[,] MyMatrix = { { 10, 5, 3,20}, 
-                                   { 3, 10, -2,9}, 
-                                   { 5, -7, 10,-9} };*/
+            var MyMatrix = Addmatrix();
             PrintMatrix(MyMatrix);
             var CopyMatrix = DeepCopy(MyMatrix);
             Step1(CopyMatrix,MyMatrix);
@@ -22,7 +15,15 @@ namespace Lab1.ChM
             Step4(CopyMatrix, MyMatrix);
             PrintMatrix(CopyMatrix);
         }
-        public static 
+        public static double[,] Addmatrix()
+        {
+            double[,] MyMatrix = {{5.18,1.12,0.95,1.32,0.83,7.59},
+                                 {1.12,4.28,2.12,0.57,0.91,3.21},
+                                 {0.95,2.12,6.13,1.29,1.57,2.88},
+                                 {1.32, 0.57,1.29,4.57,1.25,6.25},
+                                 {0.83,0.91,1.57,1.25,5.21,6.35}};
+            return MyMatrix;
+        }
         public static void PrintMatrix(double[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
